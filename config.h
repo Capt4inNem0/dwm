@@ -9,8 +9,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
 static const int gappx              = 5;        /* gap pixel between windows */
-static const char *fonts[]          = { "monospace:size=15" };
-static const char dmenufont[]       = "monospace:size=15";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=15" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=15";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
