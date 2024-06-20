@@ -43,6 +43,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+/* #define MODKEY Mod1Mask */
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -56,10 +57,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "gnome-terminal", NULL };
-static const char *brightness[][6] = {{"brightnessadjustment", "/sys/class/backlight/intel_backlight", "sum", "6", NULL},{"brightnessadjustment", "/sys/class/backlight/intel_backlight", "minus", "6", NULL}};
-static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
-static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+static const char *brightness[][6] = {{"brightnessadjustment", "/sys/class/backlight/amdgpu_bl1", "sum", "5", NULL},{"brightnessadjustment", "/sys/class/backlight/amdgpu_bl1", "minus", "5", NULL}};
+static const char *mutecmd[] = { "amixer", "-c", "1", "-q", "set", "Master", "toggle", ";", "amixer", "-c", "1", "-q", "set", "Speakers", "toggle", NULL };
+static const char *volupcmd[] = { "amixer", "-c", "1", "-q", "set", "Master", "5%+", "unmute", NULL };
+static const char *voldowncmd[] = { "amixer", "-c", "1", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *miccmd[] = { "amixer", "set", "Capture", "toggle", NULL };
 
 static const Key keys[] = {
