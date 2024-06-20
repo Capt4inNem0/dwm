@@ -19,6 +19,9 @@ static const char col_cyan[]        = "#775500";
 
 #include "/home/cnemo/.cache/wal/colors-wal-dwm.h"
 
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
